@@ -1,0 +1,22 @@
+<!-- Page Header-->
+<header class="masthead">
+    <div class="bg" style="background-image: url( <%= post.coverImageSource %> ) ">
+    <div class="site-info-container">
+        <div class="post-heading">
+            <h1> <%= post.title %> </h1>
+            <h2><%= post.subtitle %></h2>
+            <span>
+                Posted
+                on <b><%= post.createdAt.toLocaleDateString() %></b>
+                by <b><%= post.author %></b>
+            </span>
+        </div>
+    </div>
+</div>
+</header>
+<!-- Post Content-->
+<section class="container">
+    <article class="post-container">
+                    <%- post.bodyHtml %>
+    </article>
+</section>

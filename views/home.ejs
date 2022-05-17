@@ -1,0 +1,39 @@
+<!-- Page Header-->
+<header class="masthead">
+    <div class="bg" style="background-image: url('assets/img/home-bg.webp')">
+    <div class="site-info-container">
+        <div class="site-heading">
+            <h1>quill</h1>
+            <span>Where ideas come together</span>
+        </div>
+    </div>
+</div>
+</header>
+<!-- Main Content-->
+<section class="container">
+    <!-- Divider-->
+    <div class="posts-preview">
+        <h1 class="heading">Latest Posts</h1>
+        <hr class="divider" />
+        <!-- Post preview-->
+        <% if (posts.length === 0) { %>
+            <p> <center> Whoops! Looks like there aren't any posts yet! </center> </p>
+        <% } %>
+
+        <% posts.forEach((post) => { %>
+            <div class="post-preview">
+                <a href="/posts/<%= post.id %>">
+                    <h2 class="post-title"><%= post.title %></h2>
+                    <p class="post-meta">
+                        Posted on <%= post.createdAt.toLocaleDateString() %>
+                        by <%= post.author %>
+                    </p>
+                    <h3 class="post-subtitle"><%= post.subtitle %></h3>
+                </a>
+            </div>
+        <%})%>
+        <!-- Pager-->
+    <!-- Divider-->
+    <hr class="divider" />
+    </div>
+</section>
